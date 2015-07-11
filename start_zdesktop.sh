@@ -9,7 +9,7 @@
 # Save this script as a short cut on the users desktop.
 #
 
-export PATH=/usr/bin:/bin:/usr/sbin
+export PATH=/usr/bin:/bin:/usr/sbin 
 
 # change to users home directory
 cd ~
@@ -19,7 +19,7 @@ if [ -e Library ]; then
    #echo mac 
    webapp='./Library/Zimbra Desktop/zdesktop.webapp/webapp.ini'
    zdesktop='./Library/Zimbra Desktop/bin/zdesktop'
-   browser='open -a safari'
+   browser='open -a safari' 
    ps -ef |grep Desktop |grep java > /dev/null 2>/dev/null
    isRunning=$?
 else
@@ -30,6 +30,16 @@ else
    ps auxw | grep zdesktop | grep jar > /dev/null 2>/dev/null
    isRunning=$?
 fi
+
+case $1 in 
+   stop)
+	# %%% not automatic should other instances being run
+        # against it.  Need a better solution.
+        echo stopping
+        $zdesktop stop
+   ;;
+
+   *)
 
 # bring up the backend first if not running
 if [ ! $isRunning -eq 0 ]; then
@@ -42,8 +52,5 @@ url=$(grep uri "$webapp" |sed 's/uri=//')
 
 #launch browser with this URL
 $browser $url
-
-#%%% need to shutdown but what if user has other instances running
-#    including the original zimbra desktop instance.
-#echo waiting
-#$zdesktop stop
+   ;;
+esac
