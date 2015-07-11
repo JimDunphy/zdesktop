@@ -47,11 +47,3 @@ $browser $url
 #    including the original zimbra desktop instance.
 #echo waiting
 #$zdesktop stop
-~                                                                                                                                                                                                                    
-~                                                                                                                                                                                                                    
-~                                                                                                                                                                                                                    
-~                                                                                                                                                                                                                    
-~                                                                                                                                                                                                                    
-~                                                                                                                                                                                                                    
-~                                                                                                                                                                                                                    
-                                                                                                                                                                                                   1,1           All
