@@ -43,7 +43,7 @@ case $1 in
 
 # bring up the backend first if not running
 if [ ! $isRunning -eq 0 ]; then
-  $zdesktop start
+  "$zdesktop" start
   sleep 2
 fi
 
