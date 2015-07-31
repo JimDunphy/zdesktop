@@ -36,7 +36,7 @@ case $1 in
 	# %%% not automatic should other instances being run
         # against it.  Need a better solution.
         echo stopping
-        $zdesktop stop
+        "$zdesktop" stop
    ;;
 
    *)
